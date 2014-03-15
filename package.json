@@ -1,4 +1,9 @@
 {
     "name": "Algorhythm",
-    "main": "html/index.html"
+    "main": "html/index.html",
+    "description": "Algorhythm VJ Tool",
+    "version": "0.0.1",
+    "dependencies": {
+        "gaze": "*"
+    }
 }
