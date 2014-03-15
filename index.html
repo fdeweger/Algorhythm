@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello node</title>
+</head>
+<body>
+Hello node js!
+<script>
+    var config = require('./config.json');
+
+    if (config.debug) {
+        // Auto reload
+        var Gaze = require('gaze').Gaze;
+        var gaze = new Gaze('**/*');
+
+        gaze.on('all', function(event, filepath) {
+            if (location) {
+                location.reload();
+            }
+        });
+    }
+</script>
+</body>
+</html>
