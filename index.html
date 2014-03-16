@@ -2,22 +2,28 @@
 <html>
 <head>
     <title>Hello node</title>
+    <link rel="stylesheet" type="text/css" href="./css/algorhythm.css">
 </head>
 <body>
-Hello node js!
+<div id="container">
+    Hello nodes js!
+    <div id="workspace">
+        <div class="box draggable" draggable="true">Drag queen</div>
+    </div>
+    <div class="debugbar"><button id="debug">Click!</button></div>
+</div>
 <script>
+    "use strict";
+    // https://github.com/rogerwang/node-webkit/issues/1188#issuecomment-26002789
+    global.window = window;
+    global.document = window.document;
+
     var config = require('./config.json');
+    var $ = require('./js/functions.js');
+    var draggables = $.qsa('.draggable');
 
     if (config.debug) {
-        // Auto reload
-        var Gaze = require('gaze').Gaze;
-        var gaze = new Gaze('**/*');
-
-        gaze.on('all', function(event, filepath) {
-            if (location) {
-                location.reload();
-            }
-        });
+        require('./js/debug.js')
     }
 </script>
 </body>
